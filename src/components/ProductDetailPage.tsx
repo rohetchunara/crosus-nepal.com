@@ -266,10 +266,10 @@ export default function ProductDetailPage({ product, onBack }: ProductDetailPage
               >
                 {added ? (
                   <>
-                    <Check size={14} /> Added to Bag
+                    <Check size={14} /> Added to Cart
                   </>
                 ) : (
-                  `Add to Bag — NPR ${(product.price * quantity).toLocaleString()}`
+                  `Add to Cart — NPR ${(product.price * quantity).toLocaleString()}`
                 )}
               </button>
             </div>
