@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .duration-400 {
+    transition-duration: 400ms;
+  }
+}
+
+/* Hero text animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+/* Crochet animation keyframes */
+@keyframes thread-base {
+  0%, 20% { opacity: 0; }
+  30% { opacity: 0.6; }
+  100% { opacity: 0.6; }
+}
+
+.animate-thread-base {
+  animation: thread-base 0.8s ease-out forwards;
+}
+
+@keyframes bag-outline-draw {
+  from {
+    stroke-dashoffset: 800;
+    opacity: 0;
+    stroke-width: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.8;
+    stroke-width: 1.5;
+  }
+}
+
+.animate-bag-outline {
+  animation: bag-outline-draw 2.5s ease-out 0.2s forwards;
+}
+
+@keyframes weave-appear {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-weave-1 {
+  animation: weave-appear 0.5s ease-out 1.5s forwards;
+}
+
+.animate-weave-2 {
+  animation: weave-appear 0.5s ease-out 1.8s forwards;
+}
+
+.animate-weave-3 {
+  animation: weave-appear 0.5s ease-out 2.1s forwards;
+}
+
+@keyframes stitch-draw {
+  from {
+    stroke-dashoffset: 200;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-stitch {
+  animation: stitch-draw 0.6s ease-out forwards;
+}
+
+@keyframes handle-draw {
+  from {
+    stroke-dashoffset: 250;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-handle {
+  animation: handle-draw 1s ease-out 2.3s forwards;
+}
+
+@keyframes float-strand {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+  30% { opacity: 0.3; }
+  100% {
+    opacity: 0.35;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float-strand-alt {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+  }
+  30% { opacity: 0.25; }
+  100% {
+    opacity: 0.28;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-float-strand {
+  animation: float-strand 2s ease-out 0.5s forwards;
+}
+
+.animate-float-strand-alt {
+  animation: float-strand-alt 2s ease-out 0.8s forwards;
+}
+
+@keyframes dots-fade {
+  0%, 70% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-dots {
+  animation: dots-fade 0.6s ease-out 2.7s forwards;
+}
+
+@keyframes hook-fade {
+  0%, 80% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-hook {
+  animation: hook-fade 0.6s ease-out 0.1s forwards;
+}
+
+@keyframes label-fade {
+  0%, 90% { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.animate-label-fade {
+  animation: label-fade 0.8s ease-out 3s forwards;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
+@keyframes pulse-slow-alt {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.08); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow-alt {
+  animation: pulse-slow-alt 5s ease-in-out infinite;
+}
